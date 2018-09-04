@@ -44,7 +44,7 @@ var _default = function () {
       element.setAttribute('type', 'file');
       element.click();
       element.onchange = function () {
-        onChange(element.files[0]).then(function (reponse) {
+        onChange({ target: { value: element.files[0] } }).then(function (reponse) {
           _this.insertToEditor(reponse);
         });
       };
