@@ -32,6 +32,7 @@ var _default = function () {
 
       var range = this.quill.getSelection();
       this.quill.insertEmbed(range.index, 'image', url);
+      this.element.value = null;
     }
   }, {
     key: '_onChange',

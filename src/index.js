@@ -13,6 +13,7 @@ export default class {
     const { url } = inData;
     const range = this.quill.getSelection();
     this.quill.insertEmbed(range.index, 'image', url);
+    this.element.value = null;
   }
 
   _onChange() {
