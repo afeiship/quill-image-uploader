@@ -21,9 +21,12 @@ export default class {
     element.setAttribute('type', 'file');
     element.click();
     element.onchange = () => {
-      onChange({ target: { value: element.files[0] } }).then(reponse => {
-        this.insertToEditor(reponse);
-      });
+      const value = element.files[0];
+      if (value){
+        onChange({ target: { value } }).then(reponse => {
+          this.insertToEditor(reponse);
+        });
+      }
     };
   }
 

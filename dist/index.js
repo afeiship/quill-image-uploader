@@ -44,9 +44,12 @@ var _default = function () {
       element.setAttribute('type', 'file');
       element.click();
       element.onchange = function () {
-        onChange({ target: { value: element.files[0] } }).then(function (reponse) {
-          _this.insertToEditor(reponse);
-        });
+        var value = element.files[0];
+        if (value) {
+          onChange({ target: { value: value } }).then(function (reponse) {
+            _this.insertToEditor(reponse);
+          });
+        }
       };
     }
   }, {
